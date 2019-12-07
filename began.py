@@ -14,3 +14,11 @@ ML Steps:
   Train the model
   Make prediction
   Evaluate and improve
+---------------------
+1. Import the data:
+  
+import pandas as pd
+music_data = pd.read_csv('ML_music.csv')
+music_data
+  
+  
