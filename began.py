@@ -22,7 +22,7 @@ music_data = pd.read_csv('ML_music.csv')
 music_data
   
 -------------------
-Preparing/Cleaning the data: 
+2.Preparing/Cleaning the data: 
    like removing duplicates
 
 import pandas as pd
@@ -32,4 +32,20 @@ y = music_data['Genre'] # y is o/p data set
 y
 
 -------------------- 
+  3. Learning and predicting
   
+  (Algorthim - Decesion Tree)
+
+  import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+music_data = pd.read_csv('ML_music.csv')
+x = music_data.drop(columns = ['Genre']) #x is i/p data set
+y = music_data['Genre'] # y is o/p data set
+
+model = DecisionTreeClassifier()
+model.fit(x, y)
+predictions = model.predict([[24,1], [22,0]])
+predictions
+
+----------------------------------------------------
