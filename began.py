@@ -21,4 +21,15 @@ import pandas as pd
 music_data = pd.read_csv('ML_music.csv')
 music_data
   
+-------------------
+Preparing/Cleaning the data: 
+   like removing duplicates
+
+import pandas as pd
+music_data = pd.read_csv('ML_music.csv')
+x = music_data.drop(columns = ['Genre']) #x is i/p data set
+y = music_data['Genre'] # y is o/p data set
+y
+
+-------------------- 
   
