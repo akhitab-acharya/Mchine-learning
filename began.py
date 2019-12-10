@@ -69,3 +69,24 @@ score = accuracy_score(y_test, predictions)
 score
 
 ------------------------------------------------
+5. Persisting Model:
+  
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.externals import joblib            #Joblib object has methods for saving and loading modules 
+
+music_data = pd.read_csv('ML_music.csv')
+x = music_data.drop(columns = ['Genre']) #x is i/p data set
+y = music_data['Genre'] # y is o/p data set
+
+
+model = DecisionTreeClassifier()
+model.fit(x, y)
+
+joblib.dump(model, 'music-recommender.joblib')
+
+
+#predictions = model.predict([[21, 1]])
+
+---------------------------------------------------
+
