@@ -88,5 +88,26 @@ joblib.dump(model, 'music-recommender.joblib')
 
 #predictions = model.predict([[21, 1]])
 
+
+
+#Persisting Models
+
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.externals import joblib            #Joblib object has methods for saving and loading modules 
+
+# music_data = pd.read_csv('ML_music.csv')
+# x = music_data.drop(columns = ['Genre']) #x is i/p data set
+# y = music_data['Genre'] # y is o/p data set
+
+
+# model = DecisionTreeClassifier()
+# model.fit(x, y)
+
+model = joblib.load('music-recommender.joblib')
+
+
+predictions = model.predict([[21, 1]])
+predictions
 ---------------------------------------------------
 
