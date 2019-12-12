@@ -110,4 +110,26 @@ model = joblib.load('music-recommender.joblib')
 predictions = model.predict([[21, 1]])
 predictions
 ---------------------------------------------------
+#Visualizing a Decision Tree
+
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+
+music_data = pd.read_csv('ML_music.csv')
+x = music_data.drop(columns = ['Genre']) #x is i/p data set
+y = music_data['Genre'] # y is o/p data set
+
+
+model = DecisionTreeClassifier()
+model.fit(x, y)
+
+tree.export_graphviz(model, out_file='music-recommender.dot',         #upload the dot file in VSCODE to visualise the Decision Tree.
+                    feature_names=['age', 'gender'],
+                    class_names=sorted(y.unique()),
+                     label='all',
+                     rounded=True,
+                     filled=True)
+
+--------------------------------------------------------------------
 
