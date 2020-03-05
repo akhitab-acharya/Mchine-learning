@@ -81,3 +81,14 @@ c
 OUTPUT:
 array([[ 1.+0.j,  2.+0.j],
        [ 3.+0.j,  4.+0.j]])
+
+----------------------------------------------------------------
+
+# cumulative sum:
+
+print(b.cumsum())
+print(b.cumsum(axis = 0))
+print(b.cumsum(axis = 1))
+
+--------------------------
+
